@@ -77,10 +77,10 @@ $(function () {
 			// Actions
 			function updateCheckbox() {
 				var total_price = 0;
-				$('#check-list-box li.is-active').each(function(idx, li) {
-					total_price += ($(li).data("price"));
+				$('#check-list-box li.is-active').each(function(i, item) {
+					total_price += ($(item).data("price"));
 				});
-				$('#total_price span').html(total_price);
+				$('#total_price span').html(150 - total_price);
 
 				var isChecked = $checkbox.is(":checked");
 
@@ -105,16 +105,24 @@ $(function () {
 
 				// validate by rules
 				if (150 < total_price) {
-					$('#total_price').addClass('alert-danger');
+					$('#toolbar').addClass('is-invalid');
 				} else {
-					$('#total_price').removeClass('alert-danger');
+					$('#toolbar').removeClass('is-invalid');
 				}
-				// $('.list-group-item[data-type="' +  + '"]')
 				$('.list-group.checked-list-box .list-group-item').removeClass('is-disabled');
 				$('.list-group.checked-list-box .list-group-item.is-active').each(function () {
 					$('.list-group.checked-list-box .list-group-item[data-type="' + $(this).data('type') + '"]').addClass('is-disabled');
 				});
 				$('.list-group.checked-list-box .list-group-item.is-active').removeClass('is-disabled');
+
+				// check price sum
+				$('.list-group.checked-list-box .list-group-item').each(function (i, item) {
+					if ((150 - total_price) < $(this).data('price')) {
+						$(this).addClass('is-invalid');
+					} else {
+						$(this).removeClass('is-invalid');
+					}
+				});
 			}
 
 			// Initialization

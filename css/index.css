@@ -1,7 +1,7 @@
 #wrap {
 	max-width: 1331px;
 	width: 95%;
-	margin: 70px auto 20px auto;
+	margin: 90px auto 20px auto;
 }
 
 #toolbar {
@@ -44,13 +44,22 @@
 	cursor: pointer;
 }
 
+@media (min-width: 700px) {
+	.card-columns {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+
 .card-text {
 	margin: 20px 0;
 }
 
 .list-group-item-primary {
-	color: rgb(255, 255, 255) !important;
-	background-color: rgb(66, 139, 202) !important;
+	background-color: #428BCA !important;
+	border-color: #428BCA !important;
+	color: #FFF !important;
 }
 
 .list-group {
@@ -61,11 +70,18 @@
 	-o-user-select: none;
 }
 
-.is-disabled {
-	color: #AAA;
-	background-color: #EEE;
-}
-
 .is-active {
 	white-space: nowrap;
+}
+
+.is-invalid {
+	background-color: #F2DEDE;
+	border-color: #EBCCCC;
+	color: #A94442;
+}
+
+.is-disabled {
+	background-color: #EEE;
+	border-color: #DDD;
+	color: #AAA;
 }
