@@ -4,10 +4,15 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Breakfast Order System</title>
+	<title>Breakfast Calculator</title>
 
 	<!-- Vendor -->
 	<script type="text/javascript" src="vendor/jquery.min.js" defer></script>
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js" defer></script>
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/index.css?v=1.0">
@@ -21,8 +26,25 @@
 </head>
 
 <body>
-<div id="wrap">
-
-</div>
+	<div id="wrap">
+		<div id="toolbar">
+			<div class="col-xs-2"><button type="button" class="btn btn-danger" id="reset">清除</button></div>
+			<div class="col-xs-8"><div id="total_price">總計 <span></span> 元</div></div>
+			<div class="col-xs-2">
+				<div class="dropdown" id="show_selected">
+					<button class="btn btn-secondary dropdown-toggle"
+						type="button" id="show_filter" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+					</button>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="show_filter">
+						<div class="dropdown-item" data-filter="all">顯示全部</div>
+						<div class="dropdown-item" data-filter="checked">顯示已選</div>
+						<div class="dropdown-item" data-filter="unchecked">顯示未選</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="menu_list"></div>
+	</div>
 </body>
 </html>
