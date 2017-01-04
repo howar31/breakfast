@@ -36,7 +36,7 @@ $(function () {
 				'<div class="card"><div class="card-header">' + data.type +
 				'</div><ul id="check-list-box" class="list-group list-group-flush checked-list-box">';
 			$.each(data.menu, function(i, menu) {
-				menu_string += '<li class="list-group-item" data-price="' + menu.price + '" data-type="' + data.type + '"><div class="row"><div class="col-sm-2">$' + menu.price + '</div><div class="col-sm-10">' + menu.name + '</div></div></li>';
+				menu_string += '<li class="list-group-item" data-price="' + menu.price + '" data-type="' + data.type + '"><div class="row"><div class="col-xs-2">$' + menu.price + '</div><div class="col-xs-10">' + menu.name + '</div></div></li>';
 			});
 			menu_string += '</ul></div>';
 			$('#menu_list').append(menu_string);
@@ -88,7 +88,7 @@ $(function () {
 				$widget.data("state", (isChecked) ? "on" : "off");
 
 				// Set the button"s icon
-				$widget.children().children(".col-sm-2").find(".state-icon")
+				$widget.children().children(".col-xs-2").find(".state-icon")
 				.removeClass()
 				.addClass("state-icon " + settings[$widget.data("state")].icon);
 
@@ -126,8 +126,8 @@ $(function () {
 				updateCheckbox();
 
 				// Inject the icon if applicable
-				if ($widget.children().children('.col-sm-2').find('.state-icon').length == 0) {
-					$widget.children().children('.col-sm-2').append(' <span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
+				if ($widget.children().children('.col-xs-2').find('.state-icon').length == 0) {
+					$widget.children().children('.col-xs-2').append(' <span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
 				}
 			}
 			init();

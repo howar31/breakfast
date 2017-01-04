@@ -13,6 +13,8 @@
 	padding: 15px 0px;
 	max-width: 1331px;
 	margin: 0 auto;
+	background-color: white;
+	box-shadow: 0 0 3px 0px black;
 }
 
 #toolbar::after {
@@ -62,4 +64,8 @@
 .is-disabled {
 	color: #AAA;
 	background-color: #EEE;
+}
+
+.is-active {
+	white-space: nowrap;
 }
