@@ -33,7 +33,7 @@ $(function () {
 
 		$.each(result, function(i, data) {
 			var menu_string =
-				'<div class="card"><div class="card-header">' + data.type +
+				'<div class="card"><div class="card-header">' + data.display_type +
 				'</div><ul id="check-list-box" class="list-group list-group-flush checked-list-box">';
 			$.each(data.menu, function(i, menu) {
 				menu_string += '<li class="list-group-item" data-price="' + menu.price + '" data-type="' + data.type + '"><div class="row"><div class="col-xs-2">$' + menu.price + '</div><div class="col-xs-10">' + menu.name + '</div></div></li>';
